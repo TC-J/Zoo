@@ -1,4 +1,4 @@
-from zoo.zoo import zoo
-    
 def main():
+    from zoo.zoo import zoo
+
     zoo()

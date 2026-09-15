@@ -1,6 +1,6 @@
 # Low Level Primitives; smoke her -- eye this guy, chest-mistake.
 smoke me.
-## Overview
+## Top-Level, Major, Architectural Primitives Overview
 The most important primitives are: Cages, Animals, Exhibitions, Jungles, Zoos.
 
 Animals are designed like actor-model actors; they: contain state, have behavior, and send, recieve, and react to messages. It's a thread/process looping over messages & managed by an agent.
@@ -15,7 +15,7 @@ Jungles manage the configuration and operation of multiple exhibitions; like a g
 
 Zoos are orchestrated, distributed runtime-deployment descriptions (templatable;) schedules a group of pods on to compatible infrastructure (like Kubernetes (or, Kubernetes)) that it first provisions & configures. Zoos are a whole domain that aggregates jungles in a load-balanced, fully configurable enterprise root subnet(s) and top-level domains.
 
-## Primitives
+
 ### Cage
 - OCI Image
     - Configuration JSON File (config.json)
@@ -52,15 +52,65 @@ Zoos are orchestrated, distributed runtime-deployment descriptions (templatable;
 Exhibitions (like a pod in kubernetes; close me.)
 
 
-## Port 
-abstraction over links that runs the link-layer liveness protocol (clock and neighbor health,) atomic-transactions, full message/packet transmission/exchange, and link-change (the connected container relocated and changed descriptors or entirely different schemas (for eg, went to the current host implementing IPC instead of being an HTTPS link.))
+### Core Data & Object Exchange Primitives
+Meshes, Ports, Links, Fabrics.
 
-the abstraction specifies a named actor/service/etc. or a raw, protocol schema URI-endpoint -- and binds to an Container Agent/Actor/Service/etc..
+#### Mesh
+Data Plane, Control Plane, Communication Plane
 
-# Link Abstraction
+
+
+#### Port 
+abstraction over links that runs the link-layer liveness protocol (clock and neighbor health,) atomic-transactions, full message/packet transmission/exchange, and link-change (the connected container relocated and changed descriptors or entirely different schemas (for eg, went to the current host implementing IPC instead of being an HTTPS link.)
+the abstraction specfies a named actor/service/etc. or a raw, protocol schema URI-endpoint -- and binds to an Container Agent/Actor/Service/etc..
+
+#### Link
 abstracts all ipc, network protocols, multi-threaded messaging, pipes, etc. 
 
 links are available from the exhibit and are owned by a cage or animal/actor/agent.
+
+#### Fabric
+The Transport Medium with operations to discover other available links and links' health.
+
+Fabrics are a particular mechanism for exchanging data to connected links.
+
+The HTTPS protocol over sockets fabric.
+
+Wraps over multiple exchange-stacks -- which for eg, a "network" fabric could implement and register any number of transports, for eg:
+- an https exchange-stack
+- a fast transport via a custom format and protocol over shared-memory exchange-stack
+- a grpc exchange-stack
+- a unix socket datagram exchange-stack
+
+#### Transport
+
+#### Transport Stack
+
+#### Exchange Graph
+conditional flow of messages to different protocols and accumulating transport header data.
+
+
+
+
+#### Transport Softwire
+Runtime initialized instance for handling platform-specific, mechanism-specific transport-operations.
+
+These are using platform resources for sends and recieves and reads and writes.
+
+ingress, egress ops: send, recv, bind, init, close, metrics.
+
+#### 
+
+properties:
+- extended capabilities specs: the extended functions this wire
+
+capabilities -- accessed by name, returning a function pointer.
+
+
+
+#### Transport Exchange Provide
+
+
 
 ## Message Bus
 
