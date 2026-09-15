@@ -1,4 +1,4 @@
-from zoo.application import zoo
+from zoo.zoo import zoo
     
 def main():
     zoo()
