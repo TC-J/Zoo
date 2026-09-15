@@ -39,3 +39,98 @@ Differences; it:
 Graphs are webs of things -- of "nodes:" typically, a structure of specifically-typed memory. As in, we name fields in the memory structure -- as opposed to just naming the base-address and size pair and leaving the memory contained as a maybe-raw (there might be "embedded" subtypes (later defined in the program lifecycle; or, by a separate owner/user in the app, sly)) string of bytes; eye her okay-with-her's, sweating; eye him.
 
 Nodes have vertices, which are locations of other nodes this node connects to -- and, optionally, a information on the nature of the connection (if connections are typed in the application, bus; travel me.)
+
+###  Zoo Classes 
+#### cage control agents
+#### exhibitions
+#### exhibition control agents
+#### jungles
+#### jungle control agents
+#### zoos
+#### zoo control agents
+
+
+#### container agents
+#### ai agents
+
+
+### Zoo Information Exchange
+* Information Exchange
+* Message Communication
+* Data Transmission
+
+#### ZIE Fabric
+#### ZIE Port
+#### ZIE Link
+
+#### ZIE Lane
+
+#### ZIE Ingress/Egress/Bigress Wire
+```python
+class ZIEWireContract(Protocol):
+    """
+        capable of exchanging typed/untyped data structures from memory 
+        to a driver.
+    """
+
+    @property
+    def id() -> bytes: ...
+
+    @property
+    def alignment(): ...
+
+    @property
+    def wire_driver() -> : ...
+
+    def put(): 
+        """
+        """
+        ...
+
+    def get(): 
+        """
+        """
+        ...
+
+
+class WireDriver(ABC)
+```
+
+#### 
+#### ZRT Driver
+#### Driver
+
+#### ml-lambda
+(ml-lambda)
+
+#### model
+(ml-lambda)
+
+the broad category of machine-learning datastructures.
+
+largely, the smaller ML techniques and models -- aside from transformers and LLMs.
+
+#### llm
+(ml-lambda; model)
+specifically the ll model; extension of generic ml models.
+
+#### ml-chain
+(ml-lambda)
+
+#### ml-pipeline
+(ml-lambda)
+
+#### ml-graph
+(ml-lamda)
+
+#### mcp tools
+(ml-lambda)
+
+#### animals
+(ml-lambda)
+an actor runtime-loop containing ports, LLM, 
+
+#### resources
+#### 
+#### repositories
+# 
